@@ -1,1 +1,1 @@
-var recipes = []
+var recipe = ""
