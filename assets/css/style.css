@@ -2,3 +2,17 @@
     font-family: 'Kaushan Script', cursive;
     margin-left: 80px; 
 }
+#recipeimg {
+    width: 30em;
+    height: 30em;
+    margin-top: 10px;
+}
+#ingredient-textbox {
+    width: 10em;
+}
+#list {
+    list-style: none;
+}
+#search {
+    height: 64px;
+}
