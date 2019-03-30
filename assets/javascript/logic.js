@@ -1,14 +1,60 @@
 // Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyCxZJiwa3gxIx4LOWtTkzOYmqDWim1rzk8",
-//     authDomain: "recipeme-f7d59.firebaseapp.com",
-//     databaseURL: "https://recipeme-f7d59.firebaseio.com",
-//     projectId: "recipeme-f7d59",
-//     storageBucket: "recipeme-f7d59.appspot.com",
-//     messagingSenderId: "381672219285"
-// };
-// firebase.initializeApp(config);
-// let database = firebase.database();
+var config = {
+    apiKey: "AIzaSyCxZJiwa3gxIx4LOWtTkzOYmqDWim1rzk8",
+    authDomain: "recipeme-f7d59.firebaseapp.com",
+    databaseURL: "https://recipeme-f7d59.firebaseio.com",
+    projectId: "recipeme-f7d59",
+    storageBucket: "recipeme-f7d59.appspot.com",
+    messagingSenderId: "381672219285"
+};
+firebase.initializeApp(config);
+let database = firebase.database();
+
+
+
+
+const txtEmail = document.getElementById("txtEmail");
+const txtPassword = document.getElementById("txtPassword");
+const btnLogin = document.getElementById("btnLogin");
+const btnSignUp = document.getElementById("btnSignUp");
+// const btnLogout = document.getElementById(“btnLogout”);
+
+
+// Add Login Event
+btnLogin.addEventListener("click", e => {
+    // Get Email and Pass
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // Sign In
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+
+});
+
+// // Add SignUp Event
+btnSignUp.addEventListener("click", e => {
+    // Get Email and Pass
+    // validate email!
+    const email = txtEmail.value;
+    const pass = txtPassword.value;
+    const auth = firebase.auth();
+    // Sign In
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+
+});
+
+// Realtime Listener
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+    } else {
+        console.log("not logged in");
+    }
+});
+
+
 
 //declare global objects for search results
 let objects = [
@@ -134,6 +180,12 @@ $("#search-bar").on("submit", function (event) {
                     ingredients.pop();
                 };
             };
+            for (j = 0; j < ingredients.length; j++) {
+                let index = 9 - j;
+                if (ingredients[index] == "") {
+                    ingredients.pop();
+                };
+            };
             //set global objects to search values
             objects[i].name = name;
             objects[i].imgURL = imgURL;
@@ -163,19 +215,20 @@ $("#search-bar").on("submit", function (event) {
                             $("<div>").addClass("collection").attr("id", istr))
                     )
             );
-            //populate ingredients list
-            for (k = 0; k < ingredients.length; k++) {
-                let index = ingredients.length - (k + 1);
-                let newdiv = $("<div>").append($("<li>").addClass("collection-item")
-                    .append($("<div>").text(ingredients[index])));
-                $("#" + istr).prepend(newdiv);
-            };
             $("#results").append(newcard);
-            //add to favorites event listener
+            //populate ingredients list
+            for (k = 0; k < objects[i].ingredients.length; k++) {
+                let newdiv = $("<li>").addClass("collection-item")
+                    .text(ingredients[k]);
+                $("#" + istr).append(newdiv);
+            };
+            //add-to-favorites event listener
             $("[ifav=" + istr + "]").on("click", function (event) {
                 event.preventDefault();
-                console.log(objects[parseInt(istr)]);
+                let UID = "12345";
+                database.ref("/" + UID).push(objects[parseInt(istr)]);
             });
         };
     });
 });
+
