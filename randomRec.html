@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>RecipeMe_Random</title>
+</head>
+
+<body>
+    <!--This is a navbar-->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">RecipeMe</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#"><i class="material-icons right">favorite</i>Favorites</a></li>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--This is a placeholder recipe card-->
+    <div class="row">
+        <div class="col">
+            <div id="newRec"></div>
+
+        </div>
+    </div>
+    <!--AJAX Call-->
+    <script>
+        $(document).ready(function () {
+            let recipeData
+            $.get('https://www.themealdb.com/api/json/v1/1/latest.php', function (data) {
+                recipeData = data.meals;
+
+                Object.keys(recipeData).forEach((element, index) => {
+                    let recipeDataIngredients = [];
+                    Object.keys(recipeData[index]).forEach(key => {
+                        if (key.includes('Ingredient') && recipeData[index][key] !==
+                            "") {
+                            recipeDataIngredients.push(
+                                `<li class="collection-item">${recipeData[index][key]}</li>`
+                            );
+                        }
+                    })
+                    recipeDataIngredients = recipeDataIngredients.join('');
+                    let limit = 6;
+
+                    let recipeHtml = index < 7 ? ` 
+                <div class="col s6"><div class="card medium"><div class="card-image waves-effect waves-block waves-light"><img class="activator" id="recipeimg" src="${recipeData[index].strMealThumb}"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">${recipeData[index].strMeal}<i class="material-icons right">more_vert</i></span></div><div class="card-action"><a href="https://www.bbcgoodfood.com/recipes/1742633/pumpkin-pie">Link</a><a href="${recipeData[index].strYoutube}">Youtube</a><a class="secondary-content" href="#" ifav="0"><i class="material-icons">favorite</i></a></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">Ingredients<i class="material-icons right">close</i></span><div class="collection" id="0">${recipeDataIngredients}
+                 </div></div></div></div>
+                ` : ``;
+
+                    recipes.append(recipeHtml);
+                });
+
+
+                console.log(typeof data.meals);
+                console.log(data.meals[0]);
+            })
+
+            let recipes = $('#newRec');
+        });
+    </script>
+
+
+
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-functions.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/logic.js"></script>
+
+</body>
+
+</html>
