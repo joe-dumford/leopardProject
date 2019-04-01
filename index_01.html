@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link href="./assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <title>RecipeMe</title>
+</head>
+
+<body>
+    <!--This is a navbar-->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="./index.html" class="brand-logo">RecipeMe</a>
+            <ul class="right hide-on-med-and-down">
+                <!--This is a SEARCH bar-->
+                <li>
+                    <button  class="waves-effect waves-light btn" id="randoRecipe">
+                        <a href="././././randomRec.html">Randomizer</a>
+                    </button>
+                </li>
+                <li><a href="#"><i class="material-icons right">favorite</i>Favorites</a></li>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#login">Login</a></li>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#signup">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div id="login" class="modal">
+
+        <div class="login">
+            <div class="row">
+                <form class="col s12" id="reg-form">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate" minlength="6" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <button class="btn btn-large btn-register waves-effect waves-light" type="submit"
+                            name="action">Login
+                            <i class="material-icons right">done</i>
+                        </button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- SIGNUP MODAL -->
+    <div id="signup" class="modal">
+
+        <div class="signup">
+            <div class="row">
+                <form class="col s12" id="reg-form">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate" required>
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate" required>
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate" minlength="6" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <button class="btn btn-large btn-register waves-effect waves-light" type="submit"
+                            name="action">Register
+                            <i class="material-icons right">done</i>
+                        </button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <!--FIRST (1st) Image Wrapper-->
+    <div class="parallax-container valign-wrapper">
+        <div class="parallax">
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <div class="row center">
+                <h5 id="find">Find your Recipes the right way</h5>
+            </div>
+            <img src="http://www.lovexfood.com/wp-content/uploads/2016/08/lovexfooditaly.png"
+                alt="Unsplashed background img 3">
+        </div>
+    </div>
+
+    <!--INFO Container-->
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4 id="about">About RecipeMe</h4>
+                    <p class="left-align light">Find thousands of recipes with our simple, yet innovative search engine.
+                        Discovering your new favorite meal has never been easier.
+                        Simply tell us what category of food you're intersted in, and we will send you a recipe that
+                        will make you want to come back! Enjoy.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--SECOND (2nd) Image Wrapper-->
+    <div class="parallax-container valign-wrapper">
+        <div class="parallax">
+            <img src="http://www.personalchefbyronbay.com.au/wp-content/uploads/2015/09/home-table3-parallax.jpg"
+                alt="Unsplashed background img 3"></div>
+    </div>
+    <!--FOOTER-->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Our Mission</h5>
+                    <p class="grey-text text-lighten-4">RecipeMe was created by a team of four best friends in hopes of
+                        making a website that would save all our favorite recipes. Each recipe saved is our motivation
+                        to keep pushing for now and in the future.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">How To Reach Us </h5>
+                    <ul>
+                        <li class="reach"> 147 Technology Pkwy #100, Peachtree Corners, GA 30092</li>
+                        <li class="reach">555-425-3921</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <!--BUTTONS-->
+            </div>
+            <div class="col s4">
+                <a class="waves-effect waves-light btn-floating social facebook">
+                    <i class="fab fa-facebook"></i> Sign in with facebook</a>
+                <a class="waves-effect waves-light btn-floating social instagram">
+                    <i class="fab fa-instagram"></i> Sign in with instagram</a>
+                <a class="waves-effect waves-light btn-floating social twitter">
+                    <i class="fab fa-twitter"></i> Sign in with twitter</a>
+                <a class="waves-effect waves-light btn-floating social linkedin">
+                    <i class="fab fa-linkedin"></i> Sign in with linkedin</a>
+                <a class="waves-effect waves-light btn-floating social pinterest">
+                    <i class="fab fa-pinterest"></i> Sign in with pinterest</a>
+            </div>
+            <div class="col s4">
+
+            </div>
+        </div>
+        <!--COPYWRITE-->
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./assets/javascript/materialize.js"></script>
+    <script src="./assets/javascript/init.js"></script>
+    <script src="./assets/javascript/logic.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
+
+</body>
+
+</html>
