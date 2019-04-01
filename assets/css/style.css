@@ -16,3 +16,259 @@
 #search {
     height: 64px;
 }
+
+
+#about {
+    font-family: 'Kaushan Script', cursive;
+    color: #ee6e73;
+    font-size: 50px;
+}
+
+#find {
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    font-size: 50px;
+    
+}
+
+.left-align {
+    font-family: 'Playfair Display', serif;
+    line-height: 120%;
+    font-size: 25px; 
+}
+
+.nav-wrapper {
+    padding-bottom: 20px;
+}
+
+.parallax-container .parallax img {
+    width: 100%;
+    z-index: -1
+}
+
+
+p {
+line-height: 2rem;
+}
+
+.sidenav-trigger {
+color: #26a69a;
+}
+
+.header col {
+    z-index: 2;
+}
+.parallax-container {
+    width: 100%;
+    top: -8px;
+    z-index: -1;
+}
+
+@media only screen and (max-width : 992px) {
+.parallax-container .section {
+    position: absolute;
+    top: 40%;
+}
+#index-banner .section {
+    top: 10%;
+}
+}
+
+@media only screen and (max-width : 600px) {
+#index-banner .section {
+    top: 0;
+}
+}
+
+
+.icon-block {
+padding: 0 15px;
+}
+.icon-block .material-icons {
+font-size: inherit;
+}
+
+footer.page-footer {
+margin: 0;
+line-height: 20px;
+margin-top: -8px;
+left: 0;
+bottom: 0;
+width: 100%;
+text-align: center;
+}
+
+.reach {
+    padding: 10px;
+}
+
+.fa-twitter {
+    background-color: #55acee
+}
+
+.fa-facebook {
+    background-color: #039be5;
+}
+
+.fa-instagram {
+    background-color: #405de6;
+}
+
+.fa-linkedin{
+    background-color: #007bb6;
+}
+
+.fa-pinterest {
+    background-color: #cb2027;
+}
+
+
+.waves-effect {
+    background-color: #ee6e73 !important;
+    box-shadow: none;
+    text-shadow: none;
+    text-decoration-color: none; 
+    color: inherit;
+    
+}
+
+/********SIGNUP MODAL************/
+
+.signup {
+    background: white;
+    padding: 20px 25px;
+    border: 6px solid #ee6e73;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.col.s6>.btn {
+    width: 100%;
+}
+
+radio:required {
+    border-color: red;
+}
+
+.signup {
+    animation: showUp 0.5s cubic-bezier(0.18, 1.3, 1, 1) forwards;
+}
+
+@keyframes showUp {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transoform: scale(1);
+    }
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.ngl {
+
+    top: -20px;
+    right: -20px;
+}
+
+
+/********LOGIN MODAL************/
+
+.login {
+    background: white;
+    padding: 20px 25px;
+    border: 6px solid #ee6e73;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.col.s6>.btn {
+    width: 100%;
+    background-color:  #ee6e73;
+}
+
+radio:required {
+    border-color: red;
+}
+
+.login {
+    animation: showUp 0.5s cubic-bezier(0.18, 1.3, 1, 1) forwards;
+}
+
+@keyframes showUp {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transoform: scale(1);
+    }
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.ngl {
+
+    top: -20px;
+    right: -20px;
+}
+
+/********LOGOUT MODAL************/
+
+.logout {
+    background: white;
+    padding: 20px 25px;
+    border: 6px solid #ee6e73;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.col.s6>.btn {
+    width: 100%;
+    background-color:  #ee6e73;
+}
+
+radio:required {
+    border-color: red;
+}
+
+.logout {
+    animation: showUp 0.5s cubic-bezier(0.18, 1.3, 1, 1) forwards;
+}
+
+@keyframes showUp {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transoform: scale(1);
+    }
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.ngl {
+
+    top: -20px;
+    right: -20px;
+}
+
+
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #ee6e73;
+}
